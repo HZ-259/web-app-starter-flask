@@ -14,5 +14,31 @@
 <h1>Event results</h1>
 <h2>{{state_name}}</h2>
 
+
+{% if events %}
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Event Name</th>
+            <th scope="col">Event Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for event in events %}
+            <tr>
+              <td>${{ event.name }}</td>
+              <td>{{ event.local_start_date }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  {% else %}
+    <p>Events not found.</p>
+  {% endif %}
+
 </body>
 </html>
