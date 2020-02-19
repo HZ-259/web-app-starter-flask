@@ -7,6 +7,8 @@ from flask import Flask
 
 from web_app.routes.home import home_routes
 from web_app.routes.products import product_routes
+from web_app.routes.new_routes import new_routes
+
 
 def create_app():
     load_dotenv()
@@ -19,6 +21,7 @@ def create_app():
     app.config.from_mapping(ENV=app_env, SECRET_KEY=secret_key, TESTING=testing)
     app.register_blueprint(home_routes)
     app.register_blueprint(product_routes)
+    app.register_blueprint(new_routes)
 
     return app
 
