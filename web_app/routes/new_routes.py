@@ -24,11 +24,8 @@ def getevents():
     pages = tm_client.events.find(
         classification_name='Hip-Hop',
         state_code=state_name,
-        #state_code=location_input,
         start_date_time='2020-01-01T01:00:00Z',
-        end_date_time='2020-03-02T01:00:00Z'
-        #start_date_time='2020-',month_input,'-',day_input,'T01:00:00Z',
-        #end_date_time='2020-',month_input,'-',day_input,'T24:00:00Z'
+        end_date_time='2020-03-20T01:00:00Z'
     ).limit(10)
     for event in pages:
         print(event)
