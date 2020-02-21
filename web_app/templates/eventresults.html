@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
     <title>Find events near you!</title>
 
     
 
 </head>
+
 <body>
+
+<header class="v-header container">
+    <div class="fullscreen-video-wrap">
+          <video autoplay muted loop id="myVideo">
+            <Source src="{{ url_for('static', filename='myVideo.mp4') }}" type="video/mp4">
+          </video>
+        </div>
 
 <h1>Event results</h1>
 <h2>{{state_name}}</h2>
@@ -41,6 +49,6 @@
   {% else %}
     <p>Events not found.</p>
   {% endif %}
-
+</header>
 </body>
 </html>
