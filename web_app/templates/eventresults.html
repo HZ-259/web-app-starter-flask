@@ -14,12 +14,6 @@
 
 <body>
 
-<header class="v-header container">
-    <div class="fullscreen-video-wrap">
-          <video autoplay muted loop id="myVideo">
-            <Source src="{{ url_for('static', filename='myVideo.mp4') }}" type="video/mp4">
-          </video>
-        </div>
 
 <h1>Event results</h1>
 <h2>{{state_name}}</h2>
@@ -49,6 +43,5 @@
   {% else %}
     <p>Events not found.</p>
   {% endif %}
-</header>
 </body>
 </html>
