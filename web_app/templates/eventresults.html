@@ -10,58 +10,6 @@
 
 </head>
 
-<style>
-
-table {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-table, th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-table tr:nth-child(even){background-color: #f2f2f2;}
-
-table tr:hover {background-color: #ddd;}
-
-table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
-}
-
-div {
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 80px;
-}
-
-h1 { 
-  display: block;
-  font-size: 3em;
-  color: #4CAF50;
-  margin-top: 0.67em;
-  margin-bottom: 0.67em;
-  margin-left: 75px;
-  margin-right: 0;
-}
-
-h2 { 
-  display: block;
-  font-size: 1.5em;
-  margin-top: 0.83em;
-  margin-bottom: 0.83em;
-  margin-left: 75px;
-  margin-right: 0;
-}
-</style>
-
 <body>
 
 <h1>Event results</h1>
@@ -70,27 +18,27 @@ h2 {
 
 {% if events %}
 
-    <div class="Events">
-      <table class="Events">
-        <thead>
-          <tr>
-            <th scope="col">Event Name</th>
-            <th scope="col">Event Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for event in events %}
-            <tr>
-              <td>${{ event.name }}</td>
-              <td>{{ event.local_start_date }}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
+<div class="Events">
+  <table class="Events">
+    <thead>
+      <tr>
+        <th scope="col">Event Name</th>
+        <th scope="col">Event Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for event in events %}
+      <tr>
+        <td>${{ event.name }}</td>
+        <td>{{ event.local_start_date }}</td>
+      </tr>
+    {% endfor %}
+      </tbody>
       </table>
-    </div>
+</div>
 
-  {% else %}
-    <p>Events not found.</p>
+{% else %}
+  <p>Events not found.</p>
   {% endif %}
 </body>
 
